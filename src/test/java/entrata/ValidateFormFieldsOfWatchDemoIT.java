@@ -16,10 +16,11 @@ public class ValidateFormFieldsOfWatchDemoIT {
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.entrata.com/");
 
         WebElement watchDemoButton = driver.findElement(By.linkText("Watch Demo"));
+        Assert.assertTrue(watchDemoButton.isDisplayed());
         watchDemoButton.click();
 
         WebElement firstNameTextField = driver.findElement(By.id("FirstName"));
